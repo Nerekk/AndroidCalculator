@@ -283,7 +283,7 @@
 
     <TextView
         android:id="@+id/textViewFinal"
-        android:layout_width="328dp"
+        android:layout_width="0dp"
         android:layout_height="78dp"
         android:layout_marginLeft="40dp"
         android:layout_marginTop="40dp"
@@ -300,7 +300,7 @@
 
     <TextView
         android:id="@+id/textViewEstimate"
-        android:layout_width="328dp"
+        android:layout_width="0dp"
         android:layout_height="53dp"
         android:layout_marginLeft="40dp"
         android:layout_marginTop="20dp"
