@@ -29,6 +29,7 @@
                 android:layout_height="match_parent"
                 android:layout_margin="5dp"
                 android:layout_weight="1"
+                android:onClick="handleAC"
                 android:text="AC"
                 android:textAppearance="@style/TextAppearance.AppCompat.Display1"
                 android:textSize="20sp" />
@@ -40,6 +41,7 @@
                 android:layout_height="match_parent"
                 android:layout_margin="5dp"
                 android:layout_weight="1"
+                android:onClick="handleC"
                 android:text="C"
                 android:textAppearance="@style/TextAppearance.AppCompat.Medium"
                 android:textSize="20sp" />
@@ -51,6 +53,7 @@
                 android:layout_height="match_parent"
                 android:layout_margin="5dp"
                 android:layout_weight="1"
+                android:onClick="handleBK"
                 android:textAlignment="center"
                 android:textAppearance="@style/TextAppearance.AppCompat.Display1"
                 android:textSize="12sp"
@@ -65,6 +68,7 @@
                 android:layout_height="match_parent"
                 android:layout_margin="5dp"
                 android:layout_weight="1"
+                android:onClick="handleDivide"
                 android:text="/"
                 android:textAppearance="@style/TextAppearance.AppCompat.Display1" />
 
@@ -115,6 +119,7 @@
                 android:layout_height="match_parent"
                 android:layout_margin="5dp"
                 android:layout_weight="1"
+                android:onClick="handleMultiply"
                 android:text="*"
                 android:textAppearance="@style/TextAppearance.AppCompat.Display1" />
 
@@ -165,6 +170,7 @@
                 android:layout_height="match_parent"
                 android:layout_margin="5dp"
                 android:layout_weight="1"
+                android:onClick="handleSub"
                 android:text="-"
                 android:textAppearance="@style/TextAppearance.AppCompat.Display1" />
 
@@ -215,6 +221,7 @@
                 android:layout_height="match_parent"
                 android:layout_margin="5dp"
                 android:layout_weight="1"
+                android:onClick="handleAdd"
                 android:text="+"
                 android:textAppearance="@style/TextAppearance.AppCompat.Display1" />
 
@@ -232,6 +239,7 @@
                 android:layout_height="match_parent"
                 android:layout_margin="5dp"
                 android:layout_weight="1"
+                android:onClick="handleCh"
                 android:text="+/-"
                 android:textAppearance="@style/TextAppearance.AppCompat.Display1"
                 android:textSize="20sp" />
@@ -248,13 +256,14 @@
                 android:textAppearance="@style/TextAppearance.AppCompat.Display1" />
 
             <Button
-                android:id="@+id/buttonComma"
+                android:id="@+id/buttonDot"
                 style="@style/Widget.Material3.Button.ElevatedButton"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_margin="5dp"
                 android:layout_weight="1"
-                android:text=","
+                android:onClick="handleDot"
+                android:text="."
                 android:textAppearance="@style/TextAppearance.AppCompat.Display1" />
 
             <Button
@@ -264,6 +273,7 @@
                 android:layout_height="match_parent"
                 android:layout_margin="5dp"
                 android:layout_weight="1"
+                android:onClick="handleEquals"
                 android:text="="
                 android:textAppearance="@style/TextAppearance.AppCompat.Display1" />
 
@@ -273,24 +283,31 @@
 
     <TextView
         android:id="@+id/textViewFinal"
-        android:layout_width="0dp"
-        android:layout_height="101dp"
+        android:layout_width="328dp"
+        android:layout_height="78dp"
         android:layout_marginLeft="40dp"
         android:layout_marginTop="40dp"
         android:layout_marginRight="40dp"
+        android:autoSizeMaxTextSize="60sp"
+        android:autoSizeMinTextSize="34sp"
+        android:autoSizeTextType="uniform"
         android:text="0"
         android:textAlignment="textEnd"
-        android:textSize="48sp"
+        android:textSize="60sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/textViewEstimate"
-        android:layout_width="0dp"
-        android:layout_height="62dp"
+        android:layout_width="328dp"
+        android:layout_height="53dp"
         android:layout_marginLeft="40dp"
+        android:layout_marginTop="20dp"
         android:layout_marginRight="40dp"
+        android:autoSizeMaxTextSize="34sp"
+        android:autoSizeMinTextSize="8sp"
+        android:autoSizeTextType="uniform"
         android:text="Estimating"
         android:textAlignment="textEnd"
         android:textSize="34sp"
