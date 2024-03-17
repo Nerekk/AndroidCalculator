@@ -14,9 +14,15 @@ import androidx.core.view.WindowInsetsCompat;
 public class MainActivity extends AppCompatActivity {
 
     private TextView textViewFinal, textViewEstimate;
-    private Button button0, button1, button2, button3, button4, button5, button6,
-    button7, button8, button9, buttonAC, buttonC, buttonBK,buttonDivide, buttonMultiply,
-    buttonAdd, buttonSub, buttonChange, buttonEquals, buttonComma;
+    private boolean isOperationChosen = false;
+    private boolean isDouble = false;
+    private boolean isClearClicked = false;
+    private int operation = 0;
+    private final int ADD = 1;
+    private final int SUB = 2;
+    private final int MUL = 3;
+    private final int DIV = 4;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,6 +37,48 @@ public class MainActivity extends AppCompatActivity {
             return insets;
         });
     }
+
+
+    public void handleAC(View v) {
+        operateButton((Button) v);
+    }
+
+    public void handleC(View v) {
+        operateButton((Button) v);
+    }
+
+    public void handleBK(View v) {
+        operateButton((Button) v);
+    }
+
+    public void handleCh(View v) {
+        operateButton((Button) v);
+    }
+
+    public void handleDot(View v) {
+        operateButton((Button) v);
+    }
+
+    public void handleDivide(View v) {
+        operateButton((Button) v);
+    }
+
+    public void handleMultiply(View v) {
+        operateButton((Button) v);
+    }
+
+    public void handleSub(View v) {
+        operateButton((Button) v);
+    }
+
+    public void handleAdd(View v) {
+        operateButton((Button) v);
+    }
+
+    public void handleEquals(View v) {
+        operateButton((Button) v);
+    }
+
 
     public void handleNum0(View v) {
         operateButton((Button) v);
@@ -74,11 +122,19 @@ public class MainActivity extends AppCompatActivity {
 
     public void operateButton(Button button) {
         String buttonText = button.getText().toString();
+        String tvFinal = textViewFinal.getText().toString();
 
         switch (buttonText) {
             case "0":
-                if (!textViewFinal.getText().toString().equals("0")) {
-                    String newText = textViewFinal.getText().toString() + "0";
+                isClearClicked = false;
+                if (isOperationChosen) {
+                    String s = "0";
+                    textViewFinal.setText(s);
+                    isOperationChosen = false;
+                    break;
+                }
+                if (!tvFinal.equals("0") && !tvFinal.equals("-0")) {
+                    String newText = tvFinal + "0";
                     textViewFinal.setText(newText);
                 }
                 break;
@@ -110,13 +166,165 @@ public class MainActivity extends AppCompatActivity {
                 operateNumButton(buttonText, "9");
                 break;
         }
+        String s;
+        switch (buttonText) {
+            case "AC":
+                textViewEstimate.setText("");
+                textViewFinal.setText("0");
+                break;
+
+            case "C":
+                if (isClearClicked) {
+                    textViewEstimate.setText("");
+                }
+                textViewFinal.setText("0");
+                isClearClicked = true;
+                break;
+
+            case ".":
+                isClearClicked = false;
+                if (!isDouble) {
+                    String finalDot = tvFinal + ".";
+                    textViewFinal.setText(finalDot);
+                    isDouble = true;
+                } else if (tvFinal.endsWith(".")) {
+                    s = tvFinal.substring(0, tvFinal.length()-1);
+                    textViewFinal.setText(s);
+                    isDouble = false;
+                }
+                break;
+
+            case "+/-":
+                isClearClicked = false;
+                if (tvFinal.startsWith("-")) {
+                    s = tvFinal.substring(1);
+                } else {
+                    s = "-" + tvFinal;
+                }
+                textViewFinal.setText(s);
+                break;
+
+            case "":
+                isClearClicked = false;
+                if (tvFinal.length() == 1) {
+                    textViewFinal.setText("0");
+                } else {
+                    s = tvFinal.substring(0, tvFinal.length()-1);
+                    textViewFinal.setText(s);
+                }
+                break;
+        }
+
+        switch (buttonText) {
+            case "/":
+                isClearClicked = false;
+                operation = DIV;
+                if (textViewEstimate.getText().toString().isEmpty()) {
+                    textViewEstimate.setText(tvFinal);
+                } else if (!isOperationChosen) {
+                    calculate(false);
+                }
+
+                isOperationChosen = true;
+                break;
+
+            case "*":
+                isClearClicked = false;
+                operation = MUL;
+                if (textViewEstimate.getText().toString().isEmpty()) {
+                    textViewEstimate.setText(tvFinal);
+                } else if (!isOperationChosen) {
+                    calculate(false);
+                }
+
+                isOperationChosen = true;
+                break;
+
+            case "-":
+                isClearClicked = false;
+                operation = SUB;
+                if (textViewEstimate.getText().toString().isEmpty()) {
+                    textViewEstimate.setText(tvFinal);
+                } else if (!isOperationChosen) {
+                    calculate(false);
+                }
+
+                isOperationChosen = true;
+                break;
+
+            case "+":
+                isClearClicked = false;
+                operation = ADD;
+                if (textViewEstimate.getText().toString().isEmpty()) {
+                    textViewEstimate.setText(tvFinal);
+                } else if (!isOperationChosen) {
+                    calculate(false);
+                }
+
+                isOperationChosen = true;
+                break;
+
+            case "=":
+                isClearClicked = false;
+                calculate(true);
+                break;
+        }
     }
 
-    private void operateNumButton(String buttonText, String digit) {
-        if (textViewFinal.getText().toString().equals("0")) {
-            textViewFinal.setText(digit);
+    public void calculate(boolean isFinished) {
+//        if (!isOperationChosen) return;
+
+        String est = textViewEstimate.getText().toString();
+        String fin = textViewFinal.getText().toString();
+
+        Double estimated = Double.parseDouble(est);
+        Double finalNumber = Double.parseDouble(fin);
+        Double result = 0.0;
+
+        switch (operation) {
+            case DIV:
+                if (finalNumber!=0.0)
+                    result = estimated/finalNumber;
+                break;
+
+            case MUL:
+                result = estimated*finalNumber;
+                break;
+
+            case ADD:
+                result = estimated+finalNumber;
+                break;
+
+            case SUB:
+                result = estimated-finalNumber;
+                break;
+        }
+        if (finalNumber==0.0 && operation == DIV) {
+            String err = "Error";
+            textViewEstimate.setText(err);
+            return;
+        }
+
+        String resultStr = result.toString();
+        textViewFinal.setText(resultStr);
+        if (isFinished) {
+            textViewEstimate.setText("");
         } else {
-            String newText = textViewFinal.getText().toString() + digit;
+            textViewEstimate.setText(resultStr);
+        }
+    }
+
+    public void operateNumButton(String buttonText, String digit) {
+        isClearClicked = false;
+        String tvFinal = textViewFinal.getText().toString();
+        if (tvFinal.equals("0") || isOperationChosen) {
+            textViewFinal.setText(digit);
+            if (isOperationChosen) isOperationChosen = false;
+        } else if (tvFinal.equals("-0")) {
+            String s = "-" + digit;
+            textViewFinal.setText(s);
+        } else {
+            String newText = tvFinal + digit;
             textViewFinal.setText(newText);
         }
     }
@@ -124,32 +332,5 @@ public class MainActivity extends AppCompatActivity {
     public void assignAllIds() {
         textViewFinal = findViewById(R.id.textViewFinal);
         textViewEstimate = findViewById(R.id.textViewEstimate);
-
-        assignButtonId(button0, R.id.button0);
-        assignButtonId(button1, R.id.button1);
-        assignButtonId(button2, R.id.button2);
-        assignButtonId(button3, R.id.button3);
-        assignButtonId(button4, R.id.button4);
-        assignButtonId(button5, R.id.button5);
-        assignButtonId(button6, R.id.button6);
-        assignButtonId(button7, R.id.button7);
-        assignButtonId(button8, R.id.button8);
-        assignButtonId(button9, R.id.button9);
-
-        assignButtonId(buttonAC, R.id.buttonAC);
-        assignButtonId(buttonC, R.id.buttonC);
-        assignButtonId(buttonBK, R.id.buttonBK);
-        assignButtonId(buttonDivide, R.id.buttonDivide);
-        assignButtonId(buttonMultiply, R.id.buttonMultiply);
-        assignButtonId(buttonAdd, R.id.buttonAdd);
-        assignButtonId(buttonSub, R.id.buttonSub);
-        assignButtonId(buttonChange, R.id.buttonChange);
-        assignButtonId(buttonEquals, R.id.buttonEquals);
-        assignButtonId(buttonComma, R.id.buttonComma);
-
-    }
-
-    public void assignButtonId(Button button, int id) {
-        button = findViewById(id);
     }
 }
