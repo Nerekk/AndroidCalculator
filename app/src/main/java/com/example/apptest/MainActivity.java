@@ -132,6 +132,7 @@ public class MainActivity extends AppCompatActivity {
                     s = "0";
                     textViewFinal.setText(s);
                     isOperationChosen = false;
+                    isDouble = false;
                     break;
                 }
                 if (!tvFinal.equals("0") && !tvFinal.equals("-0")) {
@@ -140,41 +141,43 @@ public class MainActivity extends AppCompatActivity {
                 }
                 break;
             case "1":
-                operateNumButton(buttonText, "1");
+                operateNumButton("1");
                 break;
             case "2":
-                operateNumButton(buttonText, "2");
+                operateNumButton("2");
                 break;
             case "3":
-                operateNumButton(buttonText, "3");
+                operateNumButton("3");
                 break;
             case "4":
-                operateNumButton(buttonText, "4");
+                operateNumButton("4");
                 break;
             case "5":
-                operateNumButton(buttonText, "5");
+                operateNumButton("5");
                 break;
             case "6":
-                operateNumButton(buttonText, "6");
+                operateNumButton("6");
                 break;
             case "7":
-                operateNumButton(buttonText, "7");
+                operateNumButton("7");
                 break;
             case "8":
-                operateNumButton(buttonText, "8");
+                operateNumButton("8");
                 break;
             case "9":
-                operateNumButton(buttonText, "9");
+                operateNumButton("9");
                 break;
         }
 
         switch (buttonText) {
             case "AC":
+                isDouble = false;
                 textViewEstimate.setText("");
                 textViewFinal.setText("0");
                 break;
 
             case "C":
+                isDouble = false;
                 if (isClearClicked) {
                     textViewEstimate.setText("");
                 }
@@ -209,7 +212,11 @@ public class MainActivity extends AppCompatActivity {
                 isClearClicked = false;
                 if (tvFinal.length() == 1) {
                     textViewFinal.setText("0");
+                    isDouble = false;
                 } else {
+                    int len = tvFinal.length();
+                    if (tvFinal.charAt(len-1) == '.') isDouble = false;
+
                     s = tvFinal.substring(0, tvFinal.length()-1);
                     textViewFinal.setText(s);
                 }
@@ -256,6 +263,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void calculate(boolean isFinished) {
         String est = textViewEstimate.getText().toString();
+        if (est.isEmpty()) return;
         String fin = textViewFinal.getText().toString();
 
         Double estimated = Double.parseDouble(est);
@@ -301,15 +309,17 @@ public class MainActivity extends AppCompatActivity {
         return result;
     }
 
-    public void operateNumButton(String buttonText, String digit) {
+    public void operateNumButton(String digit) {
         isClearClicked = false;
         String tvFinal = textViewFinal.getText().toString();
         if (tvFinal.equals("0") || isOperationChosen) {
             textViewFinal.setText(digit);
+            isDouble = false;
             if (isOperationChosen) isOperationChosen = false;
         } else if (tvFinal.equals("-0")) {
             String s = "-" + digit;
             textViewFinal.setText(s);
+            isDouble = false;
         } else {
             String newText = tvFinal + digit;
             textViewFinal.setText(newText);
