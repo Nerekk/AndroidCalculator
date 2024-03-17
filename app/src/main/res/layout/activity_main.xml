@@ -308,7 +308,6 @@
         android:autoSizeMaxTextSize="34sp"
         android:autoSizeMinTextSize="8sp"
         android:autoSizeTextType="uniform"
-        android:text="Estimating"
         android:textAlignment="textEnd"
         android:textSize="34sp"
         app:layout_constraintEnd_toEndOf="parent"

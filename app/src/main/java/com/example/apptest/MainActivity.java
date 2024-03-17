@@ -123,19 +123,20 @@ public class MainActivity extends AppCompatActivity {
     public void operateButton(Button button) {
         String buttonText = button.getText().toString();
         String tvFinal = textViewFinal.getText().toString();
+        String s;
 
         switch (buttonText) {
             case "0":
                 isClearClicked = false;
                 if (isOperationChosen) {
-                    String s = "0";
+                    s = "0";
                     textViewFinal.setText(s);
                     isOperationChosen = false;
                     break;
                 }
                 if (!tvFinal.equals("0") && !tvFinal.equals("-0")) {
-                    String newText = tvFinal + "0";
-                    textViewFinal.setText(newText);
+                    s = tvFinal + "0";
+                    textViewFinal.setText(s);
                 }
                 break;
             case "1":
@@ -166,7 +167,7 @@ public class MainActivity extends AppCompatActivity {
                 operateNumButton(buttonText, "9");
                 break;
         }
-        String s;
+
         switch (buttonText) {
             case "AC":
                 textViewEstimate.setText("");
@@ -217,51 +218,23 @@ public class MainActivity extends AppCompatActivity {
 
         switch (buttonText) {
             case "/":
-                isClearClicked = false;
                 operation = DIV;
-                if (textViewEstimate.getText().toString().isEmpty()) {
-                    textViewEstimate.setText(tvFinal);
-                } else if (!isOperationChosen) {
-                    calculate(false);
-                }
-
-                isOperationChosen = true;
+                handleOperator(tvFinal);
                 break;
 
             case "*":
-                isClearClicked = false;
                 operation = MUL;
-                if (textViewEstimate.getText().toString().isEmpty()) {
-                    textViewEstimate.setText(tvFinal);
-                } else if (!isOperationChosen) {
-                    calculate(false);
-                }
-
-                isOperationChosen = true;
+                handleOperator(tvFinal);
                 break;
 
             case "-":
-                isClearClicked = false;
                 operation = SUB;
-                if (textViewEstimate.getText().toString().isEmpty()) {
-                    textViewEstimate.setText(tvFinal);
-                } else if (!isOperationChosen) {
-                    calculate(false);
-                }
-
-                isOperationChosen = true;
+                handleOperator(tvFinal);
                 break;
 
             case "+":
-                isClearClicked = false;
                 operation = ADD;
-                if (textViewEstimate.getText().toString().isEmpty()) {
-                    textViewEstimate.setText(tvFinal);
-                } else if (!isOperationChosen) {
-                    calculate(false);
-                }
-
-                isOperationChosen = true;
+                handleOperator(tvFinal);
                 break;
 
             case "=":
@@ -271,9 +244,17 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    public void calculate(boolean isFinished) {
-//        if (!isOperationChosen) return;
+    private void handleOperator(String tvFinal) {
+        isClearClicked = false;
+        if (textViewEstimate.getText().toString().isEmpty() || textViewEstimate.getText().toString().equals("Error")) {
+            textViewEstimate.setText(tvFinal);
+        } else if (!isOperationChosen) {
+            calculate(false);
+        }
+        isOperationChosen = true;
+    }
 
+    public void calculate(boolean isFinished) {
         String est = textViewEstimate.getText().toString();
         String fin = textViewFinal.getText().toString();
 
@@ -281,24 +262,8 @@ public class MainActivity extends AppCompatActivity {
         Double finalNumber = Double.parseDouble(fin);
         Double result = 0.0;
 
-        switch (operation) {
-            case DIV:
-                if (finalNumber!=0.0)
-                    result = estimated/finalNumber;
-                break;
+        result = getResult(finalNumber, estimated, result);
 
-            case MUL:
-                result = estimated*finalNumber;
-                break;
-
-            case ADD:
-                result = estimated+finalNumber;
-                break;
-
-            case SUB:
-                result = estimated-finalNumber;
-                break;
-        }
         if (finalNumber==0.0 && operation == DIV) {
             String err = "Error";
             textViewEstimate.setText(err);
@@ -312,6 +277,28 @@ public class MainActivity extends AppCompatActivity {
         } else {
             textViewEstimate.setText(resultStr);
         }
+    }
+
+    private Double getResult(Double finalNumber, Double estimated, Double result) {
+        switch (operation) {
+            case DIV:
+                if (finalNumber !=0.0)
+                    result = estimated / finalNumber;
+                break;
+
+            case MUL:
+                result = estimated * finalNumber;
+                break;
+
+            case ADD:
+                result = estimated + finalNumber;
+                break;
+
+            case SUB:
+                result = estimated - finalNumber;
+                break;
+        }
+        return result;
     }
 
     public void operateNumButton(String buttonText, String digit) {
