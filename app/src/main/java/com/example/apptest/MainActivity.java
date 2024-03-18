@@ -38,6 +38,34 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
+    @Override
+    public void onRestoreInstanceState(Bundle savedInstanceState) {
+        String[] parts = savedInstanceState.getStringArray("TV_KEY");
+
+        textViewFinal.setText(parts[0]);
+        textViewEstimate.setText(parts[1]);
+
+        operation = savedInstanceState.getInt("OP_KEY");
+        isClearClicked = savedInstanceState.getBoolean("ICC_KEY");
+        isDouble = savedInstanceState.getBoolean("ID_KEY");
+        isOperationChosen = savedInstanceState.getBoolean("IOC_KEY");
+    }
+
+    @Override
+    public void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+
+        String[] parts = new String[2];
+        parts[0] = textViewFinal.getText().toString();
+        parts[1] = textViewEstimate.getText().toString();
+
+        outState.putStringArray("TV_KEY", parts);
+        outState.putInt("OP_KEY", operation);
+        outState.putBoolean("ICC_KEY", isClearClicked);
+        outState.putBoolean("ID_KEY", isDouble);
+        outState.putBoolean("IOC_KEY", isOperationChosen);
+    }
+
 
     public void handleAC(View v) {
         operateButton((Button) v);
