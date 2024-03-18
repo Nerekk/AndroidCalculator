@@ -1,5 +1,6 @@
 package com.example.apptest;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -7,11 +8,8 @@ import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 
-public class MainActivity extends AppCompatActivity {
+public class BasicActivity extends AppCompatActivity {
 
     private TextView textViewFinal, textViewEstimate;
     private boolean isOperationChosen = false;
@@ -23,32 +21,38 @@ public class MainActivity extends AppCompatActivity {
     private final int MUL = 3;
     private final int DIV = 4;
 
+    private static final String TV_KEY = "TV_KEY";
+    private static final String ICC_KEY = "ICC_KEY";
+    private static final String ID_KEY = "ID_KEY";
+    private static final String IOC_KEY = "IOC_KEY";
+    private static final String OP_KEY = "OP_KEY";
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_basic);
 
         assignAllIds();
-
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
-            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
-            return insets;
-        });
+//        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
+//            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
+//            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
+//            return insets;
+//        });
     }
 
     @Override
     public void onRestoreInstanceState(Bundle savedInstanceState) {
-        String[] parts = savedInstanceState.getStringArray("TV_KEY");
+        String[] parts = savedInstanceState.getStringArray(TV_KEY);
 
         textViewFinal.setText(parts[0]);
         textViewEstimate.setText(parts[1]);
 
-        operation = savedInstanceState.getInt("OP_KEY");
-        isClearClicked = savedInstanceState.getBoolean("ICC_KEY");
-        isDouble = savedInstanceState.getBoolean("ID_KEY");
-        isOperationChosen = savedInstanceState.getBoolean("IOC_KEY");
+        operation = savedInstanceState.getInt(OP_KEY);
+        isClearClicked = savedInstanceState.getBoolean(ICC_KEY);
+        isDouble = savedInstanceState.getBoolean(ID_KEY);
+        isOperationChosen = savedInstanceState.getBoolean(IOC_KEY);
     }
 
     @Override
@@ -59,11 +63,17 @@ public class MainActivity extends AppCompatActivity {
         parts[0] = textViewFinal.getText().toString();
         parts[1] = textViewEstimate.getText().toString();
 
-        outState.putStringArray("TV_KEY", parts);
-        outState.putInt("OP_KEY", operation);
-        outState.putBoolean("ICC_KEY", isClearClicked);
-        outState.putBoolean("ID_KEY", isDouble);
-        outState.putBoolean("IOC_KEY", isOperationChosen);
+        outState.putStringArray(TV_KEY, parts);
+        outState.putInt(OP_KEY, operation);
+        outState.putBoolean(ICC_KEY, isClearClicked);
+        outState.putBoolean(ID_KEY, isDouble);
+        outState.putBoolean(IOC_KEY, isOperationChosen);
+    }
+
+    public void backToMenu(View view) {
+        Intent intent = new Intent(this, MenuActivity.class);
+        startActivity(intent);
+        finish();
     }
 
 

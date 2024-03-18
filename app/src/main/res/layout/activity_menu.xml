@@ -5,7 +5,7 @@
     android:id="@+id/menu"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".BasicActivity">
 
     <TextView
         android:id="@+id/textView"
@@ -43,7 +43,7 @@
                 android:layout_marginRight="5dp"
                 android:layout_weight="1"
                 android:backgroundTint="#EDDAFF"
-                android:onClick="basicSwitch"
+                android:onClick="goToBasic"
                 android:text="Basic" />
 
             <Button
