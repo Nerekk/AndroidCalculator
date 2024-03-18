@@ -45,6 +45,8 @@
         android:autoSizeTextType="uniform"
         android:textAlignment="textEnd"
         android:textSize="34sp"
+        android:maxLines="1"
+        android:maxLength="16"
         app:layout_constraintEnd_toStartOf="@+id/tableLayout"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textViewFinal" />
@@ -61,6 +63,8 @@
         android:text="0"
         android:textAlignment="textEnd"
         android:textSize="60sp"
+        android:maxLines="1"
+        android:maxLength="16"
         app:layout_constraintEnd_toStartOf="@+id/tableLayout"
         app:layout_constraintHorizontal_bias="0.444"
         app:layout_constraintStart_toStartOf="parent"
@@ -83,12 +87,13 @@
 
             <Button
                 android:id="@+id/buttonAC"
-                style="@style/Widget.Material3.Button.ElevatedButton"
+                style="@style/Widget.Material3.Button.TextButton"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_margin="5dp"
                 android:layout_weight="1"
-                android:autoSizeTextType="uniform"
+                android:backgroundTint="#DCD6E9"
+                android:elevation="3dp"
                 android:onClick="handleAC"
                 android:text="AC"
                 android:textAppearance="@style/TextAppearance.AppCompat.Display1"
@@ -96,12 +101,13 @@
 
             <Button
                 android:id="@+id/buttonC"
-                style="@style/Widget.Material3.Button.ElevatedButton"
+                style="@style/Widget.Material3.Button.TextButton"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_margin="5dp"
                 android:layout_weight="1"
-                android:autoSizeTextType="uniform"
+                android:backgroundTint="#DCD6E9"
+                android:elevation="3dp"
                 android:onClick="handleC"
                 android:text="C"
                 android:textAppearance="@style/TextAppearance.AppCompat.Medium"
@@ -109,12 +115,13 @@
 
             <Button
                 android:id="@+id/buttonBK"
-                style="@style/Widget.Material3.Button.ElevatedButton"
+                style="@style/Widget.Material3.Button.TextButton"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_margin="5dp"
                 android:layout_weight="1"
-                android:autoSizeTextType="uniform"
+                android:backgroundTint="#DCD6E9"
+                android:elevation="3dp"
                 android:onClick="handleBK"
                 android:textAlignment="center"
                 android:textAppearance="@style/TextAppearance.AppCompat.Display1"
@@ -125,15 +132,17 @@
 
             <Button
                 android:id="@+id/buttonDivide"
-                style="@style/Widget.Material3.Button.ElevatedButton"
+                style="@style/Widget.Material3.Button.TextButton"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_margin="5dp"
                 android:layout_weight="1"
-                android:autoSizeTextType="uniform"
+                android:backgroundTint="#DCD6E9"
+                android:elevation="3dp"
                 android:onClick="handleDivide"
                 android:text="/"
-                android:textAppearance="@style/TextAppearance.AppCompat.Display1" />
+                android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+                android:textSize="24sp" />
 
         </TableRow>
 
@@ -144,51 +153,59 @@
 
             <Button
                 android:id="@+id/button7"
-                style="@style/Widget.Material3.Button.ElevatedButton"
+                style="@style/Widget.Material3.Button.TextButton"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_margin="5dp"
                 android:layout_weight="1"
-                android:autoSizeTextType="uniform"
+                android:backgroundTint="#DBD5E8"
+                android:elevation="3dp"
                 android:onClick="handleNum7"
                 android:text="7"
-                android:textAppearance="@style/TextAppearance.AppCompat.Display1" />
+                android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+                android:textSize="24sp" />
 
             <Button
                 android:id="@+id/button8"
-                style="@style/Widget.Material3.Button.ElevatedButton"
+                style="@style/Widget.Material3.Button.TextButton"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_margin="5dp"
                 android:layout_weight="1"
-                android:autoSizeTextType="uniform"
+                android:backgroundTint="#DBD5E8"
+                android:elevation="3dp"
                 android:onClick="handleNum8"
                 android:text="8"
-                android:textAppearance="@style/TextAppearance.AppCompat.Display1" />
+                android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+                android:textSize="24sp" />
 
             <Button
                 android:id="@+id/button9"
-                style="@style/Widget.Material3.Button.ElevatedButton"
+                style="@style/Widget.Material3.Button.TextButton"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_margin="5dp"
                 android:layout_weight="1"
-                android:autoSizeTextType="uniform"
+                android:backgroundTint="#DBD5E8"
+                android:elevation="3dp"
                 android:onClick="handleNum9"
                 android:text="9"
-                android:textAppearance="@style/TextAppearance.AppCompat.Display1" />
+                android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+                android:textSize="24sp" />
 
             <Button
                 android:id="@+id/buttonMultiply"
-                style="@style/Widget.Material3.Button.ElevatedButton"
+                style="@style/Widget.Material3.Button.TextButton"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_margin="5dp"
                 android:layout_weight="1"
-                android:autoSizeTextType="uniform"
+                android:backgroundTint="#DBD5E8"
+                android:elevation="3dp"
                 android:onClick="handleMultiply"
                 android:text="*"
-                android:textAppearance="@style/TextAppearance.AppCompat.Display1" />
+                android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+                android:textSize="24sp" />
 
         </TableRow>
 
@@ -199,51 +216,59 @@
 
             <Button
                 android:id="@+id/button4"
-                style="@style/Widget.Material3.Button.ElevatedButton"
+                style="@style/Widget.Material3.Button.TextButton"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_margin="5dp"
                 android:layout_weight="1"
-                android:autoSizeTextType="uniform"
+                android:backgroundTint="#DAD4E7"
+                android:elevation="3dp"
                 android:onClick="handleNum4"
                 android:text="4"
-                android:textAppearance="@style/TextAppearance.AppCompat.Display1" />
+                android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+                android:textSize="24sp" />
 
             <Button
                 android:id="@+id/button5"
-                style="@style/Widget.Material3.Button.ElevatedButton"
+                style="@style/Widget.Material3.Button.TextButton"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_margin="5dp"
                 android:layout_weight="1"
-                android:autoSizeTextType="uniform"
+                android:backgroundTint="#DAD4E7"
+                android:elevation="3dp"
                 android:onClick="handleNum5"
                 android:text="5"
-                android:textAppearance="@style/TextAppearance.AppCompat.Display1" />
+                android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+                android:textSize="24sp" />
 
             <Button
                 android:id="@+id/button6"
-                style="@style/Widget.Material3.Button.ElevatedButton"
+                style="@style/Widget.Material3.Button.TextButton"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_margin="5dp"
                 android:layout_weight="1"
-                android:autoSizeTextType="uniform"
+                android:backgroundTint="#DAD4E7"
+                android:elevation="3dp"
                 android:onClick="handleNum6"
                 android:text="6"
-                android:textAppearance="@style/TextAppearance.AppCompat.Display1" />
+                android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+                android:textSize="24sp" />
 
             <Button
                 android:id="@+id/buttonSub"
-                style="@style/Widget.Material3.Button.ElevatedButton"
+                style="@style/Widget.Material3.Button.TextButton"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_margin="5dp"
                 android:layout_weight="1"
-                android:autoSizeTextType="uniform"
+                android:backgroundTint="#DAD4E7"
+                android:elevation="3dp"
                 android:onClick="handleSub"
                 android:text="-"
-                android:textAppearance="@style/TextAppearance.AppCompat.Display1" />
+                android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+                android:textSize="24sp" />
 
         </TableRow>
 
@@ -254,51 +279,59 @@
 
             <Button
                 android:id="@+id/button1"
-                style="@style/Widget.Material3.Button.ElevatedButton"
+                style="@style/Widget.Material3.Button.TextButton"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_margin="5dp"
                 android:layout_weight="1"
-                android:autoSizeTextType="uniform"
+                android:backgroundTint="#DAD4E7"
+                android:elevation="3dp"
                 android:onClick="handleNum1"
                 android:text="1"
-                android:textAppearance="@style/TextAppearance.AppCompat.Display1" />
+                android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+                android:textSize="24sp" />
 
             <Button
                 android:id="@+id/button2"
-                style="@style/Widget.Material3.Button.ElevatedButton"
+                style="@style/Widget.Material3.Button.TextButton"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_margin="5dp"
                 android:layout_weight="1"
-                android:autoSizeTextType="uniform"
+                android:backgroundTint="#DAD4E7"
+                android:elevation="3dp"
                 android:onClick="handleNum2"
                 android:text="2"
-                android:textAppearance="@style/TextAppearance.AppCompat.Display1" />
+                android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+                android:textSize="24sp" />
 
             <Button
                 android:id="@+id/button3"
-                style="@style/Widget.Material3.Button.ElevatedButton"
+                style="@style/Widget.Material3.Button.TextButton"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_margin="5dp"
                 android:layout_weight="1"
-                android:autoSizeTextType="uniform"
+                android:backgroundTint="#DAD4E7"
+                android:elevation="3dp"
                 android:onClick="handleNum3"
                 android:text="3"
-                android:textAppearance="@style/TextAppearance.AppCompat.Display1" />
+                android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+                android:textSize="24sp" />
 
             <Button
                 android:id="@+id/buttonAdd"
-                style="@style/Widget.Material3.Button.ElevatedButton"
+                style="@style/Widget.Material3.Button.TextButton"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_margin="5dp"
                 android:layout_weight="1"
-                android:autoSizeTextType="uniform"
+                android:backgroundTint="#DAD4E7"
+                android:elevation="3dp"
                 android:onClick="handleAdd"
                 android:text="+"
-                android:textAppearance="@style/TextAppearance.AppCompat.Display1" />
+                android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+                android:textSize="24sp" />
 
         </TableRow>
 
@@ -309,12 +342,13 @@
 
             <Button
                 android:id="@+id/buttonChange"
-                style="@style/Widget.Material3.Button.ElevatedButton"
+                style="@style/Widget.Material3.Button.TextButton"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_margin="5dp"
                 android:layout_weight="1"
-                android:autoSizeTextType="uniform"
+                android:backgroundTint="#D9D3E6"
+                android:elevation="3dp"
                 android:onClick="handleCh"
                 android:text="+/-"
                 android:textAppearance="@style/TextAppearance.AppCompat.Display1"
@@ -322,42 +356,47 @@
 
             <Button
                 android:id="@+id/button0"
-                style="@style/Widget.Material3.Button.ElevatedButton"
+                style="@style/Widget.Material3.Button.TextButton"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_margin="5dp"
                 android:layout_weight="1"
-                android:autoSizeTextType="uniform"
+                android:backgroundTint="#D9D3E6"
+                android:elevation="3dp"
                 android:onClick="handleNum0"
                 android:text="0"
-                android:textAppearance="@style/TextAppearance.AppCompat.Display1" />
+                android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+                android:textSize="24sp" />
 
             <Button
                 android:id="@+id/buttonDot"
-                style="@style/Widget.Material3.Button.ElevatedButton"
+                style="@style/Widget.Material3.Button.TextButton"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_margin="5dp"
                 android:layout_weight="1"
-                android:autoSizeTextType="uniform"
+                android:backgroundTint="#D9D3E6"
+                android:elevation="3dp"
                 android:onClick="handleDot"
                 android:text="."
-                android:textAppearance="@style/TextAppearance.AppCompat.Display1" />
+                android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+                android:textSize="24sp" />
 
             <Button
                 android:id="@+id/buttonEquals"
-                style="@style/Widget.Material3.Button.ElevatedButton"
+                style="@style/Widget.Material3.Button.TextButton"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_margin="5dp"
                 android:layout_weight="1"
-                android:autoSizeTextType="uniform"
+                android:backgroundTint="#D9D3E6"
+                android:elevation="3dp"
                 android:onClick="handleEquals"
                 android:text="="
-                android:textAppearance="@style/TextAppearance.AppCompat.Display1" />
+                android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+                android:textSize="24sp" />
 
         </TableRow>
-
     </TableLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
