@@ -1,0 +1,335 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/textViewFinal"
+        android:layout_width="789dp"
+        android:layout_height="137dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="40dp"
+        android:autoSizeMaxTextSize="180sp"
+        android:autoSizeMinTextSize="90sp"
+        android:autoSizeTextType="uniform"
+        android:text="0"
+        android:textAlignment="textEnd"
+        android:textSize="120sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textViewEstimate"
+        android:layout_width="786dp"
+        android:layout_height="81dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="40dp"
+        android:autoSizeMaxTextSize="80sp"
+        android:autoSizeMinTextSize="40sp"
+        android:autoSizeTextType="uniform"
+        android:text="0"
+        android:textAlignment="textEnd"
+        android:textSize="34sp"
+        app:layout_constraintBottom_toTopOf="@+id/tableLayout2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewFinal" />
+
+    <TableLayout
+        android:id="@+id/tableLayout2"
+        android:layout_width="828dp"
+        android:layout_height="wrap_content"
+        android:paddingHorizontal="30dp"
+        android:paddingVertical="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <Button
+                android:id="@+id/buttonAC"
+                style="@style/Widget.Material3.Button.ElevatedButton"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_margin="5dp"
+                android:layout_weight="1"
+                android:onClick="handleAC"
+                android:text="AC"
+                android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+                android:textSize="48sp" />
+
+            <Button
+                android:id="@+id/buttonC"
+                style="@style/Widget.Material3.Button.ElevatedButton"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_margin="5dp"
+                android:layout_weight="1"
+                android:onClick="handleC"
+                android:text="C"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                android:textSize="48sp" />
+
+            <Button
+                android:id="@+id/buttonBK"
+                style="@style/Widget.Material3.Button.ElevatedButton"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_margin="5dp"
+                android:layout_weight="1"
+                android:onClick="handleBK"
+                android:textAlignment="center"
+                android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+                android:textSize="12sp"
+                app:icon="@android:drawable/ic_input_delete"
+                app:iconGravity="textStart"
+                app:iconSize="48dp" />
+
+            <Button
+                android:id="@+id/buttonDivide"
+                style="@style/Widget.Material3.Button.ElevatedButton"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_margin="5dp"
+                android:layout_weight="1"
+                android:onClick="handleDivide"
+                android:text="/"
+                android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+                android:textSize="48sp" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <Button
+                android:id="@+id/button7"
+                style="@style/Widget.Material3.Button.ElevatedButton"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_margin="5dp"
+                android:layout_weight="1"
+                android:onClick="handleNum7"
+                android:text="7"
+                android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+                android:textSize="48sp" />
+
+            <Button
+                android:id="@+id/button8"
+                style="@style/Widget.Material3.Button.ElevatedButton"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_margin="5dp"
+                android:layout_weight="1"
+                android:onClick="handleNum8"
+                android:text="8"
+                android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+                android:textSize="48sp" />
+
+            <Button
+                android:id="@+id/button9"
+                style="@style/Widget.Material3.Button.ElevatedButton"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_margin="5dp"
+                android:layout_weight="1"
+                android:onClick="handleNum9"
+                android:text="9"
+                android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+                android:textSize="48sp" />
+
+            <Button
+                android:id="@+id/buttonMultiply"
+                style="@style/Widget.Material3.Button.ElevatedButton"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_margin="5dp"
+                android:layout_weight="1"
+                android:onClick="handleMultiply"
+                android:text="*"
+                android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+                android:textSize="48sp" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <Button
+                android:id="@+id/button4"
+                style="@style/Widget.Material3.Button.ElevatedButton"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_margin="5dp"
+                android:layout_weight="1"
+                android:onClick="handleNum4"
+                android:text="4"
+                android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+                android:textSize="48sp" />
+
+            <Button
+                android:id="@+id/button5"
+                style="@style/Widget.Material3.Button.ElevatedButton"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_margin="5dp"
+                android:layout_weight="1"
+                android:onClick="handleNum5"
+                android:text="5"
+                android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+                android:textSize="48sp" />
+
+            <Button
+                android:id="@+id/button6"
+                style="@style/Widget.Material3.Button.ElevatedButton"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_margin="5dp"
+                android:layout_weight="1"
+                android:onClick="handleNum6"
+                android:text="6"
+                android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+                android:textSize="48sp" />
+
+            <Button
+                android:id="@+id/buttonSub"
+                style="@style/Widget.Material3.Button.ElevatedButton"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_margin="5dp"
+                android:layout_weight="1"
+                android:onClick="handleSub"
+                android:text="-"
+                android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+                android:textSize="48sp" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <Button
+                android:id="@+id/button1"
+                style="@style/Widget.Material3.Button.ElevatedButton"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_margin="5dp"
+                android:layout_weight="1"
+                android:onClick="handleNum1"
+                android:text="1"
+                android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+                android:textSize="48sp" />
+
+            <Button
+                android:id="@+id/button2"
+                style="@style/Widget.Material3.Button.ElevatedButton"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_margin="5dp"
+                android:layout_weight="1"
+                android:onClick="handleNum2"
+                android:text="2"
+                android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+                android:textSize="48sp" />
+
+            <Button
+                android:id="@+id/button3"
+                style="@style/Widget.Material3.Button.ElevatedButton"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_margin="5dp"
+                android:layout_weight="1"
+                android:onClick="handleNum3"
+                android:text="3"
+                android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+                android:textSize="48sp" />
+
+            <Button
+                android:id="@+id/buttonAdd"
+                style="@style/Widget.Material3.Button.ElevatedButton"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_margin="5dp"
+                android:layout_weight="1"
+                android:onClick="handleAdd"
+                android:text="+"
+                android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+                android:textSize="48sp" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <Button
+                android:id="@+id/buttonChange"
+                style="@style/Widget.Material3.Button.ElevatedButton"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_margin="5dp"
+                android:layout_weight="1"
+                android:onClick="handleCh"
+                android:text="+/-"
+                android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+                android:textSize="48sp" />
+
+            <Button
+                android:id="@+id/button0"
+                style="@style/Widget.Material3.Button.ElevatedButton"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_margin="5dp"
+                android:layout_weight="1"
+                android:onClick="handleNum0"
+                android:text="0"
+                android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+                android:textSize="48sp" />
+
+            <Button
+                android:id="@+id/buttonDot"
+                style="@style/Widget.Material3.Button.ElevatedButton"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_margin="5dp"
+                android:layout_weight="1"
+                android:onClick="handleDot"
+                android:text="."
+                android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+                android:textSize="48sp" />
+
+            <Button
+                android:id="@+id/buttonEquals"
+                style="@style/Widget.Material3.Button.ElevatedButton"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_margin="5dp"
+                android:layout_weight="1"
+                android:onClick="handleEquals"
+                android:text="="
+                android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+                android:textSize="48sp" />
+
+        </TableRow>
+
+    </TableLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
