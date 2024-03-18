@@ -22,7 +22,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".BasicActivity">
-
+        </activity>
+        <activity android:name=".InfoActivity">
         </activity>
     </application>
 
