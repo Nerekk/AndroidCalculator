@@ -5,7 +5,33 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
     tools:context=".BasicActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="0dp"
+        android:layout_height="52dp"
+        android:background="#BA98DA"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/button"
+        style="@style/Widget.Material3.Button.IconButton"
+        android:layout_width="69dp"
+        android:layout_height="0dp"
+        android:onClick="backToMenu"
+        app:icon="@drawable/back"
+        app:iconSize="40dp"
+        app:iconTint="@color/white"
+        app:layout_constraintBottom_toBottomOf="@+id/toolbar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/textViewEstimate"
@@ -28,7 +54,6 @@
         android:layout_width="0dp"
         android:layout_height="78dp"
         android:layout_marginLeft="40dp"
-        android:layout_marginTop="40dp"
         android:layout_marginRight="20dp"
         android:autoSizeMaxTextSize="60sp"
         android:autoSizeMinTextSize="34sp"
@@ -37,18 +62,19 @@
         android:textAlignment="textEnd"
         android:textSize="60sp"
         app:layout_constraintEnd_toStartOf="@+id/tableLayout"
+        app:layout_constraintHorizontal_bias="0.444"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/toolbar" />
 
     <TableLayout
         android:id="@+id/tableLayout"
-        android:layout_width="452dp"
-        android:layout_height="wrap_content"
+        android:layout_width="415dp"
+        android:layout_height="333dp"
         android:paddingHorizontal="30dp"
         android:paddingVertical="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toBottomOf="@+id/toolbar">
 
         <TableRow
             android:layout_width="match_parent"
@@ -62,6 +88,7 @@
                 android:layout_height="match_parent"
                 android:layout_margin="5dp"
                 android:layout_weight="1"
+                android:autoSizeTextType="uniform"
                 android:onClick="handleAC"
                 android:text="AC"
                 android:textAppearance="@style/TextAppearance.AppCompat.Display1"
@@ -74,6 +101,7 @@
                 android:layout_height="match_parent"
                 android:layout_margin="5dp"
                 android:layout_weight="1"
+                android:autoSizeTextType="uniform"
                 android:onClick="handleC"
                 android:text="C"
                 android:textAppearance="@style/TextAppearance.AppCompat.Medium"
@@ -86,6 +114,7 @@
                 android:layout_height="match_parent"
                 android:layout_margin="5dp"
                 android:layout_weight="1"
+                android:autoSizeTextType="uniform"
                 android:onClick="handleBK"
                 android:textAlignment="center"
                 android:textAppearance="@style/TextAppearance.AppCompat.Display1"
@@ -101,6 +130,7 @@
                 android:layout_height="match_parent"
                 android:layout_margin="5dp"
                 android:layout_weight="1"
+                android:autoSizeTextType="uniform"
                 android:onClick="handleDivide"
                 android:text="/"
                 android:textAppearance="@style/TextAppearance.AppCompat.Display1" />
@@ -119,6 +149,7 @@
                 android:layout_height="match_parent"
                 android:layout_margin="5dp"
                 android:layout_weight="1"
+                android:autoSizeTextType="uniform"
                 android:onClick="handleNum7"
                 android:text="7"
                 android:textAppearance="@style/TextAppearance.AppCompat.Display1" />
@@ -130,6 +161,7 @@
                 android:layout_height="match_parent"
                 android:layout_margin="5dp"
                 android:layout_weight="1"
+                android:autoSizeTextType="uniform"
                 android:onClick="handleNum8"
                 android:text="8"
                 android:textAppearance="@style/TextAppearance.AppCompat.Display1" />
@@ -141,6 +173,7 @@
                 android:layout_height="match_parent"
                 android:layout_margin="5dp"
                 android:layout_weight="1"
+                android:autoSizeTextType="uniform"
                 android:onClick="handleNum9"
                 android:text="9"
                 android:textAppearance="@style/TextAppearance.AppCompat.Display1" />
@@ -152,6 +185,7 @@
                 android:layout_height="match_parent"
                 android:layout_margin="5dp"
                 android:layout_weight="1"
+                android:autoSizeTextType="uniform"
                 android:onClick="handleMultiply"
                 android:text="*"
                 android:textAppearance="@style/TextAppearance.AppCompat.Display1" />
@@ -170,6 +204,7 @@
                 android:layout_height="match_parent"
                 android:layout_margin="5dp"
                 android:layout_weight="1"
+                android:autoSizeTextType="uniform"
                 android:onClick="handleNum4"
                 android:text="4"
                 android:textAppearance="@style/TextAppearance.AppCompat.Display1" />
@@ -181,6 +216,7 @@
                 android:layout_height="match_parent"
                 android:layout_margin="5dp"
                 android:layout_weight="1"
+                android:autoSizeTextType="uniform"
                 android:onClick="handleNum5"
                 android:text="5"
                 android:textAppearance="@style/TextAppearance.AppCompat.Display1" />
@@ -192,6 +228,7 @@
                 android:layout_height="match_parent"
                 android:layout_margin="5dp"
                 android:layout_weight="1"
+                android:autoSizeTextType="uniform"
                 android:onClick="handleNum6"
                 android:text="6"
                 android:textAppearance="@style/TextAppearance.AppCompat.Display1" />
@@ -203,6 +240,7 @@
                 android:layout_height="match_parent"
                 android:layout_margin="5dp"
                 android:layout_weight="1"
+                android:autoSizeTextType="uniform"
                 android:onClick="handleSub"
                 android:text="-"
                 android:textAppearance="@style/TextAppearance.AppCompat.Display1" />
@@ -221,6 +259,7 @@
                 android:layout_height="match_parent"
                 android:layout_margin="5dp"
                 android:layout_weight="1"
+                android:autoSizeTextType="uniform"
                 android:onClick="handleNum1"
                 android:text="1"
                 android:textAppearance="@style/TextAppearance.AppCompat.Display1" />
@@ -232,6 +271,7 @@
                 android:layout_height="match_parent"
                 android:layout_margin="5dp"
                 android:layout_weight="1"
+                android:autoSizeTextType="uniform"
                 android:onClick="handleNum2"
                 android:text="2"
                 android:textAppearance="@style/TextAppearance.AppCompat.Display1" />
@@ -243,6 +283,7 @@
                 android:layout_height="match_parent"
                 android:layout_margin="5dp"
                 android:layout_weight="1"
+                android:autoSizeTextType="uniform"
                 android:onClick="handleNum3"
                 android:text="3"
                 android:textAppearance="@style/TextAppearance.AppCompat.Display1" />
@@ -254,6 +295,7 @@
                 android:layout_height="match_parent"
                 android:layout_margin="5dp"
                 android:layout_weight="1"
+                android:autoSizeTextType="uniform"
                 android:onClick="handleAdd"
                 android:text="+"
                 android:textAppearance="@style/TextAppearance.AppCompat.Display1" />
@@ -272,6 +314,7 @@
                 android:layout_height="match_parent"
                 android:layout_margin="5dp"
                 android:layout_weight="1"
+                android:autoSizeTextType="uniform"
                 android:onClick="handleCh"
                 android:text="+/-"
                 android:textAppearance="@style/TextAppearance.AppCompat.Display1"
@@ -284,6 +327,7 @@
                 android:layout_height="match_parent"
                 android:layout_margin="5dp"
                 android:layout_weight="1"
+                android:autoSizeTextType="uniform"
                 android:onClick="handleNum0"
                 android:text="0"
                 android:textAppearance="@style/TextAppearance.AppCompat.Display1" />
@@ -295,6 +339,7 @@
                 android:layout_height="match_parent"
                 android:layout_margin="5dp"
                 android:layout_weight="1"
+                android:autoSizeTextType="uniform"
                 android:onClick="handleDot"
                 android:text="."
                 android:textAppearance="@style/TextAppearance.AppCompat.Display1" />
@@ -306,6 +351,7 @@
                 android:layout_height="match_parent"
                 android:layout_margin="5dp"
                 android:layout_weight="1"
+                android:autoSizeTextType="uniform"
                 android:onClick="handleEquals"
                 android:text="="
                 android:textAppearance="@style/TextAppearance.AppCompat.Display1" />
@@ -313,4 +359,5 @@
         </TableRow>
 
     </TableLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

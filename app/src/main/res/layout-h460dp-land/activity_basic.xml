@@ -5,14 +5,39 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
     tools:context=".BasicActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="0dp"
+        android:layout_height="90dp"
+        android:background="#BA98DA"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/button"
+        style="@style/Widget.Material3.Button.IconButton"
+        android:layout_width="69dp"
+        android:layout_height="0dp"
+        android:onClick="backToMenu"
+        app:icon="@drawable/back"
+        app:iconSize="40dp"
+        app:iconTint="@color/white"
+        app:layout_constraintBottom_toBottomOf="@+id/toolbar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/textViewFinal"
         android:layout_width="789dp"
         android:layout_height="137dp"
         android:layout_marginLeft="40dp"
-        android:layout_marginTop="20dp"
         android:layout_marginRight="40dp"
         android:autoSizeMaxTextSize="180sp"
         android:autoSizeMinTextSize="90sp"
@@ -21,8 +46,9 @@
         android:textAlignment="textEnd"
         android:textSize="120sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.492"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/toolbar" />
 
     <TextView
         android:id="@+id/textViewEstimate"

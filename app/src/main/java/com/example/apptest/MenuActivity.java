@@ -20,4 +20,10 @@ public class MenuActivity extends AppCompatActivity {
         startActivity(intent);
         finish();
     }
+
+    public void goToInfo(View view) {
+        Intent intent = new Intent(this, InfoActivity.class);
+        startActivity(intent);
+        finish();
+    }
 }

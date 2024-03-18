@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">AppTest</string>
+    <string name="info">Calculator app project\n
+    PAM-2024\n
+    Arkadiusz Sałaj\n
+    240792</string>
 </resources>

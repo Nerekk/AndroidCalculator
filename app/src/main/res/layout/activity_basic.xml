@@ -5,7 +5,33 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
     tools:context=".BasicActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="0dp"
+        android:layout_height="66dp"
+        android:background="#BA98DA"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/button"
+        style="@style/Widget.Material3.Button.IconButton"
+        android:layout_width="69dp"
+        android:layout_height="0dp"
+        android:onClick="backToMenu"
+        app:icon="@drawable/back"
+        app:iconSize="40dp"
+        app:iconTint="@color/white"
+        app:layout_constraintBottom_toBottomOf="@+id/toolbar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TableLayout
         android:layout_width="0dp"
@@ -286,7 +312,6 @@
         android:layout_width="0dp"
         android:layout_height="78dp"
         android:layout_marginLeft="40dp"
-        android:layout_marginTop="100dp"
         android:layout_marginRight="40dp"
         android:autoSizeMaxTextSize="60sp"
         android:autoSizeMinTextSize="34sp"
@@ -296,7 +321,7 @@
         android:textSize="60sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/toolbar" />
 
     <TextView
         android:id="@+id/textViewEstimate"
@@ -313,17 +338,5 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textViewFinal" />
-
-    <Button
-        android:id="@+id/button"
-        style="@style/Widget.Material3.Button.IconButton"
-        android:layout_width="64dp"
-        android:layout_height="58dp"
-        android:layout_marginTop="40dp"
-        android:onClick="backToMenu"
-        app:icon="@android:drawable/ic_menu_close_clear_cancel"
-        app:iconSize="40dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
