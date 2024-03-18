@@ -21,6 +21,12 @@ public class MenuActivity extends AppCompatActivity {
         finish();
     }
 
+    public void goToAdvanced(View view) {
+        Intent intent = new Intent(this, AdvancedActivity.class);
+        startActivity(intent);
+        finish();
+    }
+
     public void goToInfo(View view) {
         Intent intent = new Intent(this, InfoActivity.class);
         startActivity(intent);

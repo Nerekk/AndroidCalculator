@@ -56,6 +56,7 @@
                 android:layout_marginRight="10dp"
                 android:layout_weight="1"
                 android:backgroundTint="#EDDAFF"
+                android:onClick="goToAdvanced"
                 android:text="Advanced" />
         </TableRow>
 

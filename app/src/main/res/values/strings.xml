@@ -4,4 +4,7 @@
     PAM-2024\n
     Arkadiusz Sałaj\n
     240792</string>
+    <string name="sqrt">√<sub>x</sub></string>
+    <string name="pow2">x²</string>
+    <string name="powy">x<sup>y</sup></string>
 </resources>
