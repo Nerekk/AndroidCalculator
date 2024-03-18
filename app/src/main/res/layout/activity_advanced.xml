@@ -58,7 +58,7 @@
                 android:autoSizeTextType="none"
                 android:backgroundTint="#DED8EB"
                 android:elevation="3dp"
-                android:onClick="handleAC"
+                android:onClick="handlePerc"
                 android:text="%"
                 android:textAppearance="@style/TextAppearance.AppCompat.Display1"
                 android:textSize="16sp" />
@@ -127,7 +127,7 @@
                 android:layout_weight="1"
                 android:backgroundTint="#DED8EB"
                 android:elevation="3dp"
-                android:onClick="handleAC"
+                android:onClick="handleSqrt"
                 android:text="@string/sqrt"
                 android:textAppearance="@style/TextAppearance.AppCompat.Display1"
                 android:textSize="16sp" />
@@ -141,7 +141,7 @@
                 android:layout_weight="1"
                 android:backgroundTint="#DED8EB"
                 android:elevation="3dp"
-                android:onClick="handleAC"
+                android:onClick="handleSin"
                 android:text="sin"
                 android:textAppearance="@style/TextAppearance.AppCompat.Display1"
                 android:textSize="16sp" />
@@ -155,7 +155,7 @@
                 android:layout_weight="1"
                 android:backgroundTint="#DED8EB"
                 android:elevation="3dp"
-                android:onClick="handleC"
+                android:onClick="handleCos"
                 android:text="cos"
                 android:textAppearance="@style/TextAppearance.AppCompat.Medium"
                 android:textSize="16sp" />
@@ -169,7 +169,7 @@
                 android:layout_weight="1"
                 android:backgroundTint="#DED8EB"
                 android:elevation="3dp"
-                android:onClick="handleAC"
+                android:onClick="handleTg"
                 android:text="tg"
                 android:textAppearance="@style/TextAppearance.AppCompat.Display1"
                 android:textSize="16sp" />
@@ -204,7 +204,7 @@
                 android:layout_weight="1"
                 android:backgroundTint="#DDD7EA"
                 android:elevation="3dp"
-                android:onClick="handleAC"
+                android:onClick="handlePow2"
                 android:text="@string/pow2"
                 android:textAppearance="@style/TextAppearance.AppCompat.Display1"
                 android:textSize="16sp" />
@@ -281,7 +281,7 @@
                 android:layout_weight="1"
                 android:backgroundTint="#DDD7EA"
                 android:elevation="3dp"
-                android:onClick="handleAC"
+                android:onClick="handlePowy"
                 android:text="@string/powy"
                 android:textAppearance="@style/TextAppearance.AppCompat.Display1"
                 android:textSize="16sp" />
@@ -358,7 +358,7 @@
                 android:layout_weight="1"
                 android:backgroundTint="#DDD7EA"
                 android:elevation="3dp"
-                android:onClick="handleAC"
+                android:onClick="handleLog"
                 android:text="log"
                 android:textAppearance="@style/TextAppearance.AppCompat.Display1"
                 android:textSize="16sp" />
@@ -435,7 +435,7 @@
                 android:layout_weight="1"
                 android:backgroundTint="#DCD6E9"
                 android:elevation="3dp"
-                android:onClick="handleAC"
+                android:onClick="handleLn"
                 android:text="ln"
                 android:textAppearance="@style/TextAppearance.AppCompat.Display1"
                 android:textSize="16sp" />

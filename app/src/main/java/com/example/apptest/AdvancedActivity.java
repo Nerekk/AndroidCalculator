@@ -1,6 +1,7 @@
 package com.example.apptest;
 
 import android.content.Intent;
+import android.content.res.Resources;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -16,10 +17,23 @@ public class AdvancedActivity extends AppCompatActivity {
     private boolean isDouble = false;
     private boolean isClearClicked = false;
     private int operation = 0;
-    private final int ADD = 1;
-    private final int SUB = 2;
-    private final int MUL = 3;
-    private final int DIV = 4;
+    private int advOperation = 0;
+    private static final int ADD = 1;
+    private static final int SUB = 2;
+    private static final int MUL = 3;
+    private static final int DIV = 4;
+    private static final int PERC = 5;
+    private static final int POW2 = 6;
+    private static final int POWY = 7;
+    private static final int SQRT = 8;
+    private static final int LOG = 9;
+    private static final int LN = 10;
+    private static final int SIN = 11;
+    private static final int COS = 12;
+    private static final int TG = 13;
+
+
+
 
     private static final String TV_KEY = "TV_KEY";
     private static final String ICC_KEY = "ICC_KEY";
@@ -33,7 +47,6 @@ public class AdvancedActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_advanced);
-
         assignAllIds();
     }
 
@@ -70,6 +83,24 @@ public class AdvancedActivity extends AppCompatActivity {
         startActivity(intent);
         finish();
     }
+
+    public void handlePerc(View v) { operateButton((Button) v);}
+
+    public void handleSqrt(View v) { operateButton((Button) v);}
+
+    public void handleSin(View v) { operateButton((Button) v);}
+
+    public void handleCos(View v) { operateButton((Button) v);}
+
+    public void handleTg(View v) { operateButton((Button) v);}
+
+    public void handlePow2(View v) { operateButton((Button) v);}
+
+    public void handlePowy(View v) { operateButton((Button) v);}
+
+    public void handleLog(View v) { operateButton((Button) v);}
+
+    public void handleLn(View v) { operateButton((Button) v);}
 
 
     public void handleAC(View v) {
@@ -243,7 +274,7 @@ public class AdvancedActivity extends AppCompatActivity {
 
             case "":
                 isClearClicked = false;
-                if (tvFinal.length() == 1) {
+                if (tvFinal.length() == 1 || isOperationChosen) {
                     textViewFinal.setText("0");
                     isDouble = false;
                 } else {
@@ -277,9 +308,49 @@ public class AdvancedActivity extends AppCompatActivity {
                 handleOperator(tvFinal);
                 break;
 
+            case "xy":
+                operation = POWY;
+                handleOperator(tvFinal);
+                break;
+
             case "=":
                 isClearClicked = false;
                 calculate(true);
+                break;
+        }
+
+        switch (buttonText) {
+            case "√x":
+                advOperation = SQRT;
+                advCalculate();
+                break;
+            case "x²":
+                advOperation = POW2;
+                advCalculate();
+                break;
+            case "%":
+                advOperation = PERC;
+                advCalculate();
+                break;
+            case "log":
+                advOperation = LOG;
+                advCalculate();
+                break;
+            case "ln":
+                advOperation = LN;
+                advCalculate();
+                break;
+            case "sin":
+                advOperation = SIN;
+                advCalculate();
+                break;
+            case "cos":
+                advOperation = COS;
+                advCalculate();
+                break;
+            case "tg":
+                advOperation = TG;
+                advCalculate();
                 break;
         }
     }
@@ -292,6 +363,24 @@ public class AdvancedActivity extends AppCompatActivity {
             calculate(false);
         }
         isOperationChosen = true;
+    }
+
+    public void advCalculate() {
+        isClearClicked = false;
+        String est = textViewEstimate.getText().toString();
+        String fin = textViewFinal.getText().toString();
+
+        Double estimated = 0.0;
+        if (!est.isEmpty()) {
+            estimated = Double.parseDouble(est);
+        }
+        Double finalNumber = Double.parseDouble(fin);
+        Double result = 0.0;
+        result = getAdvResult(finalNumber, estimated, result);
+        String resultStr = result.toString();
+        textViewFinal.setText(resultStr);
+
+        advOperation=0;
     }
 
     public void calculate(boolean isFinished) {
@@ -315,9 +404,50 @@ public class AdvancedActivity extends AppCompatActivity {
         textViewFinal.setText(resultStr);
         if (isFinished) {
             textViewEstimate.setText("");
+            isOperationChosen = true;
         } else {
             textViewEstimate.setText(resultStr);
         }
+    }
+
+    private Double getAdvResult(Double finalNumber, Double estimated, Double result) {
+        switch (advOperation) {
+            case PERC:
+                if (operation==ADD || operation==SUB)
+                    result = (estimated * (finalNumber/100));
+                if (operation==MUL || operation==DIV)
+                    result = (finalNumber/100);
+                break;
+
+            case POW2:
+                result = Math.pow(finalNumber, 2);
+                break;
+
+            case SQRT:
+                result = Math.sqrt(finalNumber);
+                break;
+
+            case LOG:
+                result = Math.log10(finalNumber);
+                break;
+
+            case LN:
+                result = Math.log(finalNumber);
+                break;
+
+            case SIN:
+                result = Math.sin(Math.toRadians(finalNumber));
+                break;
+
+            case COS:
+                result = Math.cos(Math.toRadians(finalNumber));
+                break;
+
+            case TG:
+                result = Math.tan(Math.toRadians(finalNumber));
+                break;
+        }
+        return result;
     }
 
     private Double getResult(Double finalNumber, Double estimated, Double result) {
@@ -337,6 +467,10 @@ public class AdvancedActivity extends AppCompatActivity {
 
             case SUB:
                 result = estimated - finalNumber;
+                break;
+
+            case POWY:
+                result = Math.pow(estimated, finalNumber);
                 break;
         }
         return result;
