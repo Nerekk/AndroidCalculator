@@ -2,83 +2,19 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:fitsSystemWindows="true"
-    tools:context=".BasicActivity">
-
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbar"
-        android:layout_width="0dp"
-        android:layout_height="52dp"
-        android:background="#BA98DA"
-        android:minHeight="?attr/actionBarSize"
-        android:theme="?attr/actionBarTheme"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-        android:id="@+id/button"
-        style="@style/Widget.Material3.Button.IconButton"
-        android:layout_width="69dp"
-        android:layout_height="0dp"
-        android:onClick="backToMenu"
-        app:icon="@drawable/back"
-        app:iconSize="40dp"
-        app:iconTint="@color/white"
-        app:layout_constraintBottom_toBottomOf="@+id/toolbar"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/textViewEstimate"
-        android:layout_width="0dp"
-        android:layout_height="53dp"
-        android:layout_marginLeft="40dp"
-        android:layout_marginTop="15dp"
-        android:layout_marginRight="20dp"
-        android:autoSizeMaxTextSize="34sp"
-        android:autoSizeMinTextSize="8sp"
-        android:autoSizeTextType="uniform"
-        android:maxLength="16"
-        android:maxLines="1"
-        android:textAlignment="textEnd"
-        android:textSize="34sp"
-        app:layout_constraintEnd_toStartOf="@+id/tableLayout"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textViewFinal" />
-
-    <TextView
-        android:id="@+id/textViewFinal"
-        android:layout_width="0dp"
-        android:layout_height="78dp"
-        android:layout_marginLeft="40dp"
-        android:layout_marginRight="20dp"
-        android:autoSizeMaxTextSize="60sp"
-        android:autoSizeMinTextSize="34sp"
-        android:autoSizeTextType="uniform"
-        android:text="0"
-        android:textAlignment="textEnd"
-        android:textSize="60sp"
-        android:maxLines="1"
-        android:maxLength="16"
-        app:layout_constraintEnd_toStartOf="@+id/tableLayout"
-        app:layout_constraintHorizontal_bias="0.444"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toolbar" />
+    android:layout_height="match_parent">
 
     <TableLayout
         android:id="@+id/tableLayout"
-        android:layout_width="415dp"
-        android:layout_height="333dp"
+        android:layout_width="700dp"
+        android:layout_height="0dp"
         android:paddingHorizontal="30dp"
-        android:paddingVertical="10dp"
+        android:paddingBottom="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toolbar">
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewEstimate">
 
         <TableRow
             android:layout_width="match_parent"
@@ -86,9 +22,23 @@
             android:layout_weight="1">
 
             <Button
+                android:id="@+id/buttonSin"
+                style="@style/Widget.Material3.Button.TextButton"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="5dp"
+                android:layout_weight="1"
+                android:backgroundTint="#DED8EB"
+                android:elevation="3dp"
+                android:onClick="handleSin"
+                android:text="sin"
+                android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+                android:textSize="16sp" />
+
+            <Button
                 android:id="@+id/buttonAC"
                 style="@style/Widget.Material3.Button.TextButton"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_margin="5dp"
                 android:layout_weight="1"
@@ -97,12 +47,12 @@
                 android:onClick="handleAC"
                 android:text="AC"
                 android:textAppearance="@style/TextAppearance.AppCompat.Display1"
-                android:textSize="20sp" />
+                android:textSize="16sp" />
 
             <Button
                 android:id="@+id/buttonC"
                 style="@style/Widget.Material3.Button.TextButton"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_margin="5dp"
                 android:layout_weight="1"
@@ -111,12 +61,12 @@
                 android:onClick="handleC"
                 android:text="C"
                 android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-                android:textSize="20sp" />
+                android:textSize="16sp" />
 
             <Button
                 android:id="@+id/buttonBK"
                 style="@style/Widget.Material3.Button.TextButton"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_margin="5dp"
                 android:layout_weight="1"
@@ -125,7 +75,7 @@
                 android:onClick="handleBK"
                 android:textAlignment="center"
                 android:textAppearance="@style/TextAppearance.AppCompat.Display1"
-                android:textSize="12sp"
+                android:textSize="16sp"
                 app:icon="@android:drawable/ic_input_delete"
                 app:iconGravity="textStart"
                 app:iconSize="30dp" />
@@ -133,7 +83,7 @@
             <Button
                 android:id="@+id/buttonDivide"
                 style="@style/Widget.Material3.Button.TextButton"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_margin="5dp"
                 android:layout_weight="1"
@@ -142,7 +92,7 @@
                 android:onClick="handleDivide"
                 android:text="/"
                 android:textAppearance="@style/TextAppearance.AppCompat.Display1"
-                android:textSize="24sp" />
+                android:textSize="16sp" />
 
         </TableRow>
 
@@ -150,6 +100,34 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1">
+
+            <Button
+                android:id="@+id/buttonCos"
+                style="@style/Widget.Material3.Button.TextButton"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_margin="5dp"
+                android:layout_weight="1"
+                android:backgroundTint="#DED8EB"
+                android:elevation="3dp"
+                android:onClick="handleCos"
+                android:text="cos"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                android:textSize="16sp" />
+
+            <Button
+                android:id="@+id/buttonTg"
+                style="@style/Widget.Material3.Button.TextButton"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_margin="5dp"
+                android:layout_weight="1"
+                android:backgroundTint="#DED8EB"
+                android:elevation="3dp"
+                android:onClick="handleTg"
+                android:text="tg"
+                android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+                android:textSize="16sp" />
 
             <Button
                 android:id="@+id/button7"
@@ -215,6 +193,35 @@
             android:layout_weight="1">
 
             <Button
+                android:id="@+id/buttonPerc"
+                style="@style/Widget.Material3.Button.TextButton"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_margin="5dp"
+                android:layout_weight="1"
+                android:autoSizeTextType="none"
+                android:backgroundTint="#DED8EB"
+                android:elevation="3dp"
+                android:onClick="handlePerc"
+                android:text="%"
+                android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+                android:textSize="16sp" />
+
+            <Button
+                android:id="@+id/buttonSqrt"
+                style="@style/Widget.Material3.Button.TextButton"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_margin="5dp"
+                android:layout_weight="1"
+                android:backgroundTint="#DED8EB"
+                android:elevation="3dp"
+                android:onClick="handleSqrt"
+                android:text="@string/sqrt"
+                android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+                android:textSize="16sp" />
+
+            <Button
                 android:id="@+id/button4"
                 style="@style/Widget.Material3.Button.TextButton"
                 android:layout_width="wrap_content"
@@ -276,6 +283,34 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1">
+
+            <Button
+                android:id="@+id/buttonPow2"
+                style="@style/Widget.Material3.Button.TextButton"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_margin="5dp"
+                android:layout_weight="1"
+                android:backgroundTint="#DDD7EA"
+                android:elevation="3dp"
+                android:onClick="handlePow2"
+                android:text="@string/pow2"
+                android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+                android:textSize="16sp" />
+
+            <Button
+                android:id="@+id/buttonPowy"
+                style="@style/Widget.Material3.Button.TextButton"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_margin="5dp"
+                android:layout_weight="1"
+                android:backgroundTint="#DDD7EA"
+                android:elevation="3dp"
+                android:onClick="handlePowy"
+                android:text="@string/powy"
+                android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+                android:textSize="16sp" />
 
             <Button
                 android:id="@+id/button1"
@@ -341,6 +376,34 @@
             android:layout_weight="1">
 
             <Button
+                android:id="@+id/buttonLog"
+                style="@style/Widget.Material3.Button.TextButton"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_margin="5dp"
+                android:layout_weight="1"
+                android:backgroundTint="#DDD7EA"
+                android:elevation="3dp"
+                android:onClick="handleLog"
+                android:text="log"
+                android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+                android:textSize="16sp" />
+
+            <Button
+                android:id="@+id/buttonLn"
+                style="@style/Widget.Material3.Button.TextButton"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_margin="5dp"
+                android:layout_weight="1"
+                android:backgroundTint="#DCD6E9"
+                android:elevation="3dp"
+                android:onClick="handleLn"
+                android:text="ln"
+                android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+                android:textSize="16sp" />
+
+            <Button
                 android:id="@+id/buttonChange"
                 style="@style/Widget.Material3.Button.TextButton"
                 android:layout_width="wrap_content"
@@ -398,5 +461,39 @@
 
         </TableRow>
     </TableLayout>
+
+    <TextView
+        android:id="@+id/textViewEstimate"
+        android:layout_width="680dp"
+        android:layout_height="30dp"
+        android:layout_marginHorizontal="50dp"
+        android:layout_marginTop="4dp"
+        android:autoSizeMaxTextSize="34sp"
+        android:autoSizeMinTextSize="8sp"
+        android:autoSizeTextType="uniform"
+        android:maxLength="16"
+        android:maxLines="1"
+        android:textAlignment="textEnd"
+        android:textSize="34sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewFinal" />
+
+    <TextView
+        android:id="@+id/textViewFinal"
+        android:layout_width="680dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="10dp"
+        android:autoSizeMaxTextSize="60sp"
+        android:autoSizeMinTextSize="34sp"
+        android:autoSizeTextType="uniform"
+        android:maxLength="16"
+        android:maxLines="1"
+        android:text="0"
+        android:textAlignment="textEnd"
+        android:textSize="60sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
