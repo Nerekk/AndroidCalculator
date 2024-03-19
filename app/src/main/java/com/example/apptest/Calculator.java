@@ -282,7 +282,8 @@ public class Calculator {
         result = getAdvResult(finalNumber, estimated, result);
         String resultStr = result.toString();
         textViewFinal.setText(resultStr);
-
+        isOperationChosen = true;
+        isDouble = true;
         advOperation=0;
     }
 
