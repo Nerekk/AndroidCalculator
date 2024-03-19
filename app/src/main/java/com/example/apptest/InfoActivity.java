@@ -1,6 +1,5 @@
 package com.example.apptest;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
@@ -17,8 +16,6 @@ public class InfoActivity extends AppCompatActivity {
     }
 
     public void backToMenu(View view) {
-        Intent intent = new Intent(this, MenuActivity.class);
-        startActivity(intent);
         finish();
     }
 

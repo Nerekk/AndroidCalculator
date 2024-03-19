@@ -6,7 +6,6 @@ import static com.example.apptest.Constants.IOC_KEY;
 import static com.example.apptest.Constants.OP_KEY;
 import static com.example.apptest.Constants.TV_KEY;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -18,10 +17,6 @@ import androidx.appcompat.app.AppCompatActivity;
 public class BasicActivity extends AppCompatActivity implements View.OnClickListener {
 
     private TextView textViewFinal, textViewEstimate;
-//    private boolean isOperationChosen = false;
-//    private boolean isDouble = false;
-//    private boolean isClearClicked = false;
-//    private int operation = 0;
     private Calculator c;
 
     @Override
@@ -72,8 +67,6 @@ public class BasicActivity extends AppCompatActivity implements View.OnClickList
     }
 
     public void backToMenu(View view) {
-        Intent intent = new Intent(this, MenuActivity.class);
-        startActivity(intent);
         finish();
     }
 
