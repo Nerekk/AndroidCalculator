@@ -8,31 +8,6 @@
     android:fitsSystemWindows="true"
     tools:context=".AdvancedActivity">
 
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbar"
-        android:layout_width="0dp"
-        android:layout_height="66dp"
-        android:background="#BA98DA"
-        android:minHeight="?attr/actionBarSize"
-        android:theme="?attr/actionBarTheme"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-        android:id="@+id/button"
-        style="@style/Widget.Material3.Button.IconButton"
-        android:layout_width="69dp"
-        android:layout_height="0dp"
-        android:onClick="backToMenu"
-        app:icon="@drawable/back"
-        app:iconSize="40dp"
-        app:iconTint="@color/white"
-        app:layout_constraintBottom_toBottomOf="@+id/toolbar"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
     <TableLayout
         android:layout_width="0dp"
         android:layout_height="455dp"
@@ -505,18 +480,19 @@
         android:layout_width="0dp"
         android:layout_height="78dp"
         android:layout_marginLeft="40dp"
+        android:layout_marginTop="20dp"
         android:layout_marginRight="40dp"
         android:autoSizeMaxTextSize="60sp"
         android:autoSizeMinTextSize="34sp"
         android:autoSizeTextType="uniform"
+        android:maxLength="16"
+        android:maxLines="1"
         android:text="0"
         android:textAlignment="textEnd"
         android:textSize="60sp"
-        android:maxLines="1"
-        android:maxLength="16"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toolbar" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/textViewEstimate"

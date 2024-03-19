@@ -7,9 +7,10 @@
 
     <TableLayout
         android:id="@+id/tableLayout"
-        android:layout_width="700dp"
+        android:layout_width="0dp"
         android:layout_height="0dp"
-        android:paddingHorizontal="30dp"
+        android:paddingHorizontal="50dp"
+        android:paddingVertical="10dp"
         android:paddingBottom="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -464,8 +465,8 @@
 
     <TextView
         android:id="@+id/textViewEstimate"
-        android:layout_width="680dp"
-        android:layout_height="30dp"
+        android:layout_width="0dp"
+        android:layout_height="27dp"
         android:layout_marginHorizontal="50dp"
         android:layout_marginTop="4dp"
         android:autoSizeMaxTextSize="34sp"
@@ -481,7 +482,7 @@
 
     <TextView
         android:id="@+id/textViewFinal"
-        android:layout_width="680dp"
+        android:layout_width="0dp"
         android:layout_height="60dp"
         android:layout_marginTop="10dp"
         android:autoSizeMaxTextSize="60sp"
@@ -489,6 +490,7 @@
         android:autoSizeTextType="uniform"
         android:maxLength="16"
         android:maxLines="1"
+        android:paddingHorizontal="40dp"
         android:text="0"
         android:textAlignment="textEnd"
         android:textSize="60sp"
