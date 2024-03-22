@@ -10,19 +10,19 @@
 
     <TextView
         android:id="@+id/textViewFinal"
-        android:layout_width="789dp"
-        android:layout_height="137dp"
-        android:layout_marginLeft="40dp"
-        android:layout_marginTop="40dp"
-        android:layout_marginRight="40dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginHorizontal="300dp"
+        android:layout_marginVertical="30dp"
         android:autoSizeMaxTextSize="180sp"
-        android:autoSizeMinTextSize="90sp"
+        android:autoSizeMinTextSize="60sp"
         android:autoSizeTextType="uniform"
         android:maxLength="16"
         android:maxLines="1"
         android:text="0"
         android:textAlignment="textEnd"
         android:textSize="36sp"
+        app:layout_constraintBottom_toTopOf="@+id/guideline10"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.501"
         app:layout_constraintStart_toStartOf="parent"
@@ -30,34 +30,33 @@
 
     <TextView
         android:id="@+id/textViewEstimate"
-        android:layout_width="786dp"
-        android:layout_height="81dp"
-        android:layout_marginLeft="40dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginRight="40dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginHorizontal="300dp"
+        android:layout_marginVertical="15dp"
         android:autoSizeMaxTextSize="80sp"
-        android:autoSizeMinTextSize="36sp"
+        android:autoSizeMinTextSize="30sp"
         android:autoSizeTextType="uniform"
         android:maxLength="16"
         android:maxLines="1"
         android:textAlignment="textEnd"
         android:textSize="36sp"
+        app:layout_constraintBottom_toTopOf="@+id/guideline3"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textViewFinal" />
+        app:layout_constraintTop_toTopOf="@+id/guideline10" />
 
     <TableLayout
         android:id="@+id/tableLayout2"
-        android:layout_width="1274dp"
+        android:layout_width="0dp"
         android:layout_height="0dp"
-        android:paddingHorizontal="280dp"
-        android:paddingTop="30dp"
-        android:paddingBottom="90dp"
+        android:paddingHorizontal="100dp"
+        android:paddingVertical="50dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textViewEstimate">
+        app:layout_constraintTop_toTopOf="@+id/guideline3">
 
         <TableRow
             android:layout_width="match_parent"
@@ -398,4 +397,18 @@
         </TableRow>
 
     </TableLayout>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.3" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.2" />
 </androidx.constraintlayout.widget.ConstraintLayout>
