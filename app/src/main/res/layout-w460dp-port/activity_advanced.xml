@@ -46,7 +46,7 @@
 
     <TableLayout
         android:layout_width="796dp"
-        android:layout_height="682dp"
+        android:layout_height="800dp"
         android:paddingHorizontal="70dp"
         android:paddingTop="40dp"
         android:paddingBottom="120dp"
