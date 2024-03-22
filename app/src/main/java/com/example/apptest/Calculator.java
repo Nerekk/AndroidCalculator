@@ -274,14 +274,16 @@ public class Calculator {
         if (!est.isEmpty()) {
             estimated = Double.parseDouble(est);
         }
-//        if (fin.endsWith(".")) {
-//            fin = fin.substring(0, fin.length()-1);
-//        }
+
         Double finalNumber = Double.parseDouble(fin);
         Double result = 0.0;
         result = getAdvResult(finalNumber, estimated, result);
         String resultStr = result.toString();
+        if (resultStr.endsWith(".0")) {
+            resultStr = resultStr.substring(0, resultStr.length()-2);
+        }
         textViewFinal.setText(resultStr);
+
         isOperationChosen = true;
         isDouble = true;
         advOperation=0;
@@ -305,7 +307,11 @@ public class Calculator {
         }
 
         String resultStr = result.toString();
+        if (resultStr.endsWith(".0")) {
+            resultStr = resultStr.substring(0, resultStr.length()-2);
+        }
         textViewFinal.setText(resultStr);
+
         if (isFinished) {
             textViewEstimate.setText("");
             isOperationChosen = true;
