@@ -266,6 +266,13 @@ public class Calculator {
     }
 
     public void advCalculate() {
+        if (textViewEstimate.getText().toString().equals("Error")) {
+            String s = "0";
+            textViewFinal.setText(s);
+            textViewEstimate.setText(s);
+            return;
+        }
+
         isClearClicked = false;
         String est = textViewEstimate.getText().toString();
         String fin = textViewFinal.getText().toString();
@@ -276,6 +283,11 @@ public class Calculator {
         }
 
         Double finalNumber = Double.parseDouble(fin);
+        if (finalNumber<0 && advOperation==SQRT) {
+            String err = "Error";
+            textViewEstimate.setText(err);
+            return;
+        }
         Double result = 0.0;
         result = getAdvResult(finalNumber, estimated, result);
         String resultStr = result.toString();
@@ -290,6 +302,13 @@ public class Calculator {
     }
 
     public void calculate(boolean isFinished) {
+        if (textViewEstimate.getText().toString().equals("Error")) {
+            String s = "0";
+            textViewFinal.setText(s);
+            textViewEstimate.setText(s);
+            return;
+        }
+
         String est = textViewEstimate.getText().toString();
         if (est.isEmpty()) return;
         String fin = textViewFinal.getText().toString();
